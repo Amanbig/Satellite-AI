@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import { FileUpload } from "@/components/ui/file-upload";
 
 export function UploadFile({handleFileChange}: { handleFileChange: (files: File[]) => void }) {
