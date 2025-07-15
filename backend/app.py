@@ -6,7 +6,7 @@ from tensorflow.keras.utils import img_to_array, load_img
 import numpy as np
 from io import BytesIO
 
-model = tf.keras.models.load_model("./model/final_model.h5")
+model = tf.keras.models.load_model("./model/model.h5")
 
 labels = ['cloudy', 'desert', 'green_area','water']
 
