@@ -1,36 +1,137 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Satellite AI Frontend 🎨
 
-## Getting Started
+The frontend application for Satellite AI, built with Next.js 13+ and modern web technologies. This application provides an intuitive interface for satellite image classification.
 
-First, run the development server:
+## ✨ Features
 
+- 🖼️ **Modern UI/UX**: Clean and responsive design with Shadcn UI components
+- 🌓 **Dark Mode**: Full dark mode support for better user experience
+- 📱 **Responsive**: Works seamlessly on desktop, tablet, and mobile devices
+- 🎭 **Animations**: Smooth transitions and animations using Framer Motion
+- 📤 **Drag & Drop**: Easy file upload with drag and drop support
+- 🔍 **Image Preview**: Real-time preview of uploaded satellite images
+- 🚀 **Fast Analysis**: Quick response times with optimized API calls
+
+## 🛠️ Tech Stack
+
+- **Framework**: Next.js 13+ with App Router
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **UI Components**: Shadcn UI
+- **Animations**: Framer Motion
+- **State Management**: React Hooks
+- **HTTP Client**: Native Fetch API
+
+## 📁 Project Structure
+
+```
+src/
+├── app/                    # App router pages
+│   ├── page.tsx           # Home page
+│   ├── detect/            # Image detection page
+│   └── api/               # API routes
+├── components/            
+│   ├── detectImage/       # Image detection components
+│   ├── heroSection/       # Landing page hero section
+│   ├── previewImages/     # Image preview components
+│   └── ui/                # Reusable UI components
+└── lib/                   # Utility functions
+```
+
+## 🚀 Getting Started
+
+1. **Clone the repository:**
+```bash
+git clone https://github.com/your-username/Satellite-AI.git
+cd Satellite-AI/frontend
+```
+
+2. **Install dependencies:**
+```bash
+npm install
+# or
+yarn install
+```
+
+3. **Set up environment variables:**
+```bash
+cp .env.example .env.local
+```
+
+4. **Start the development server:**
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🔧 Available Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `npm run dev`: Start development server
+- `npm run build`: Build for production
+- `npm run start`: Start production server
+- `npm run lint`: Run ESLint
+- `npm run type-check`: Run TypeScript type checking
 
-## Learn More
+## 🌍 Environment Variables
 
-To learn more about Next.js, take a look at the following resources:
+| Variable | Description | Default |
+|----------|-------------|---------|
+| `NEXT_PUBLIC_API_URL` | Backend API URL | `http://localhost:8000` |
+| `NODE_ENV` | Environment mode | `development` |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🎯 Key Components
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Detection Page
+- Upload satellite images
+- Real-time image preview
+- Classification results display
+- Error handling and loading states
 
-## Deploy on Vercel
+### Home Page
+- Hero section with call-to-action
+- Feature showcase
+- How it works section
+- Image preview gallery
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Reusable Components
+- Custom Button component
+- File Upload with drag & drop
+- Alert notifications
+- Animated background patterns
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🔄 API Integration
+
+The frontend communicates with the backend through RESTful endpoints:
+
+```typescript
+// Example API call
+const detectArea = async (file: File) => {
+  const formData = new FormData();
+  formData.append('file', file);
+  
+  const response = await fetch('/api/predict', {
+    method: 'POST',
+    body: formData,
+  });
+  
+  return response.json();
+};
+```
+
+## 🎨 Styling
+
+We use Tailwind CSS for styling with custom configuration:
+- Custom color palette
+- Responsive breakpoints
+- Dark mode support
+- Animation utilities
+
+## 📚 Learn More
+
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Tailwind CSS](https://tailwindcss.com/docs)
+- [Shadcn UI](https://ui.shadcn.com)
+- [Framer Motion](https://www.framer.com/motion/)
