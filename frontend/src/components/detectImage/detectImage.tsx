@@ -93,9 +93,11 @@ export function DetectImage() {
         </form>
 
         {error && (
-          <Alert variant="destructive" className="mt-4">
+            <div className="flex flex-col items-center justify-center m-6">
+          <Alert variant="destructive" className="m-4 w-[50%]">
             <AlertDescription>{error}</AlertDescription>
           </Alert>
+          </div>
         )}
 
         {prediction && (

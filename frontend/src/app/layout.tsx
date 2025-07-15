@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { MainNavbar } from "@/components/navBar/navBar";
+import Footer from "@/components/footer/footer";
 
 export const metadata: Metadata = {
   title: "Satellite AI",
@@ -26,6 +27,7 @@ export default function RootLayout({
                   >
                     <MainNavbar/>
         {children}
+        <Footer/>
                   </ThemeProvider>
       </body>
     </html>
